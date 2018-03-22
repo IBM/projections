@@ -4,11 +4,11 @@
     "module": "commonjs",
     "target": "es2015",
     "sourceMap": true,
-    "allowJs": true,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "declaration": true
   },
   "include": [
-    "src/"
+    "src/**/*"
   ]
 }
 

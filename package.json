@@ -2,7 +2,8 @@
   "name": "hdsp",
   "version": "0.0.5",
   "description": "High-Dimensional Space Projections",
-  "main": "src/HDSP.ts",
+  "main": "dist/HDSP.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wp": "webpack --mode development",
@@ -27,5 +28,7 @@
   },
   "homepage": "https://github.com/IBM/projections#readme",
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "typescript-compiler": "^1.4.1-2"
+  }
 }
