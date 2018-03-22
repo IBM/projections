@@ -5,6 +5,12 @@ import {PowerMethod, Decomposition} from "./PowerMethod";
 import {Utils} from "./Utils";
 export class PivotMDS {
 	
+	/**
+	 * Project a feature space into `D` dimensions.
+	 * @param featureVectors the feature vectors
+	 * @param K the number of pivots
+	 * @param D the output dimensionality
+	 */
 	static project = (featureVectors: number[][], K:number, D:number): number[][] => {
 		let N = featureVectors.length;
 		K = Math.min(N, K);

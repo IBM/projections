@@ -35,6 +35,11 @@ export class Prokrustes
 		return points;
 	}
 
+	/*
+	 * Optimally translate, scale and rotate and input point cloud `A` to a given point cloud `B`.
+	 * @param A input point cloud
+	 * @param B target point cloud
+         */
 	static transform = (A: number[][], B: number[][]):number[][] => {
 		let A_p = Prokrustes.toPoint2D(A);
     	return Prokrustes.toArray(Prokrustes.t(A_p, Prokrustes.r(A_p, Prokrustes.toPoint2D(B))));
