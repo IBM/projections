@@ -1,6 +1,6 @@
 {
   "name": "hdsp",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "High-Dimensional Space Projections",
   "main": "dist/HDSP.js",
   "types": "dist/HDSP.d.ts",
