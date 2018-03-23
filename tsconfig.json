@@ -1,12 +1,23 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
     "module": "commonjs",
-    "target": "es2015",
+    "noImplicitAny": true,
     "sourceMap": true,
+    "removeComments": true,
     "preserveConstEnums": true,
-    "declaration": true
-  },
+    "declaration": true,
+    "target": "es5",
+    "lib": ["es2015", "dom"],
+    "outDir": "./dist",
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedParameters": false,
+    "pretty": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnreachableCode": false,
+    "experimentalDecorators": true  },
   "include": [
     "src/**/*"
   ]

@@ -105,25 +105,25 @@ export class Prokrustes
 		return T;
 	}
 
-	/**
-	 * Computes the least squared error between point sets A and B. The lists
-	 * must have equal length.
-	 * 
-	 * @param A
-	 *            list of points
-	 * @param B
-	 *            list of points
-	 * @return the least squared error between A and B
-	 */
-	private static e = (A:Point2D[], B:Point2D[]):number => {
-		let k = A.length;
-		let e = 0;
-		for (let i = 0; i < k; i++)
-		{
-			e += Math.sqrt(Math.pow(A[i].x - B[i].x, 2) + Math.pow(A[i].y - B[i].y, 2));
-		}
-		return e;
-	}
+	///**
+	// * Computes the least squared error between point sets A and B. The lists
+	// * must have equal length.
+	// * 
+	// * @param A
+	// *            list of points
+	// * @param B
+	// *            list of points
+	// * @return the least squared error between A and B
+	// */
+	//private static e = (A:Point2D[], B:Point2D[]):number => {
+	//	let k = A.length;
+	//	let e = 0;
+	//	for (let i = 0; i < k; i++)
+	//	{
+	//		e += Math.sqrt(Math.pow(A[i].x - B[i].x, 2) + Math.pow(A[i].y - B[i].y, 2));
+	//	}
+	//	return e;
+	//}
 }
 
 class Point2D {
@@ -143,47 +143,47 @@ class Registration
 	sct: number;
 	sst: number;
 
-	/**
-	 * Getter for x translation
-	 * 
-	 * @return x translation for the affine transformation
-	 */
-	getTx = ():number =>
-	{
-		return this.tx;
-	}
+	///**
+	// * Getter for x translation
+	// * 
+	// * @return x translation for the affine transformation
+	// */
+	//getTx = ():number =>
+	//{
+	//	return this.tx;
+	//}
 
-	/**
-	 * Getter for y translation
-	 * 
-	 * @return y translation for the affine transformation
-	 */
-	getTy = ():number =>
-	{
-		return this.ty;
-	}
+	///**
+	// * Getter for y translation
+	// * 
+	// * @return y translation for the affine transformation
+	// */
+	//getTy = ():number =>
+	//{
+	//	return this.ty;
+	//}
 
-	/**
-	 * Getter for scaling
-	 *
-	 * @return scaling
-	 */
-	getScaling = ():number =>
-	{
-		return Math.sqrt(Math.pow(this.sct, 2) + Math.pow(this.sst, 2));
-	}
+	///**
+	// * Getter for scaling
+	// *
+	// * @return scaling
+	// */
+	//getScaling = ():number =>
+	//{
+	//	return Math.sqrt(Math.pow(this.sct, 2) + Math.pow(this.sst, 2));
+	//}
 
-	/**
-	 * Getter for rotation (in degrees)
-	 *
-	 * @return rotation (in degrees)
-	 */
-	getRotation = ():number =>
-	{
-		return this.toDegrees(Math.acos(this.sct / this.getScaling()));
-	}
+	///**
+	// * Getter for rotation (in degrees)
+	// *
+	// * @return rotation (in degrees)
+	// */
+	//getRotation = ():number =>
+	//{
+	//	return this.toDegrees(Math.acos(this.sct / this.getScaling()));
+	//}
 
-	private toDegrees = (angle):number => {
-  		return angle * (180 / Math.PI);
-  	}
+	//private toDegrees = (angle):number => {
+  	//	return angle * (180 / Math.PI);
+  	//}
 }
