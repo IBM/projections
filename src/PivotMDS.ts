@@ -10,6 +10,7 @@ export class PivotMDS {
 	 * @param featureVectors the feature vectors
 	 * @param K the number of pivots
 	 * @param D the output dimensionality
+	 * @return
 	 */
 	static project = (featureVectors: number[][], K:number, D:number): number[][] => {
 		let N = featureVectors.length;
@@ -48,6 +49,9 @@ export class PivotMDS {
 	    for (let i = 0; i < eVecs.length; i++) {
 	    	let scale = Math.sqrt(eVals[i]);
 	    	for (let j = 0; j < eVecs[0].length; j++) {
+	    		if(isNaN(eVecs[i][j])) {
+	    			eVecs[i][j] = 0;
+	    		}
 	    		eVecs[i][j] *= scale;
 	    	}
 	    }
