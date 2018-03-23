@@ -3,3 +3,4 @@
  */
 export * from "./PivotMDS";
 export * from "./Prokrustes";
+export * from "./Test";
