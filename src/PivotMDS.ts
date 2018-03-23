@@ -13,7 +13,14 @@ export class PivotMDS {
 	 * @return
 	 */
 	static project = (featureVectors: number[][], K:number, D:number): number[][] => {
+		if(featureVectors == null) {
+			return null;
+		}
 		let N = featureVectors.length;
+		// empty input
+		if(N == 0) {
+			return [];
+		}
 		K = Math.min(N, K);
 		let distances:number[][] = PivotMDS.distance(featureVectors);
 		let result:number[][] = Utils.array2D(N, D);
@@ -48,7 +55,12 @@ export class PivotMDS {
     	let eVecs:number[][] = decomposition.vectors;
 	    for (let i = 0; i < eVecs.length; i++) {
 	    	let scale = Math.sqrt(eVals[i]);
+	    	// fix degeneracy for low intrinstic dimensionality
+	    	if(isNaN(scale)) {
+	    		scale = 0;
+	    	}
 	    	for (let j = 0; j < eVecs[0].length; j++) {
+	    		// fix degeneracy for low intrinsic dimenstionality
 	    		if(isNaN(eVecs[i][j])) {
 	    			eVecs[i][j] = 0;
 	    		}
