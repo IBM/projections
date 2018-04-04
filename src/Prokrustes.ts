@@ -19,10 +19,14 @@ export class Prokrustes
 	// 	console.log(Prokrustes.e(Prokrustes.t(A, Prokrustes.r(A, B)), B) < 0.000001 ? "SUCCESS" : "FAIL");
 	// }
 
-	private static toPoint2D = (A:number[][]):Point2D[] => {
+	private static toPoint2D = (A:number[][], mirror:boolean):Point2D[] => {
 		let points:Point2D[] = [];
 		A.forEach((a, index) => {
-			points.push(new Point2D(a[0], a[1]));
+			if(mirror) {
+				points.push(new Point2D(-a[0], a[1]));
+			} else {
+				points.push(new Point2D(a[0], a[1]));
+			}
 		});
 		return points;
 	}
@@ -41,8 +45,17 @@ export class Prokrustes
 	 * @param B target point cloud
          */
 	static transform = (A: number[][], B: number[][]):number[][] => {
-		let A_p = Prokrustes.toPoint2D(A);
-    	return Prokrustes.toArray(Prokrustes.t(A_p, Prokrustes.r(A_p, Prokrustes.toPoint2D(B))));
+		let A_p     = Prokrustes.toPoint2D(A, false);
+		let A_m     = Prokrustes.toPoint2D(A, true); // mirrored
+		let B_p     = Prokrustes.toPoint2D(B, false);
+		let A_t     = Prokrustes.t(A_p, Prokrustes.r(A_p, B_p));
+		let A_m_t = Prokrustes.t(A_m, Prokrustes.r(A_m, B_p));
+		if(Prokrustes.e(A_t, B_p) < Prokrustes.e(A_m_t, B_p)) {
+			return Prokrustes.toArray(A_t);
+		}
+		else {
+			return Prokrustes.toArray(A_m_t);
+		}
 	}
 
 	/**
@@ -105,25 +118,25 @@ export class Prokrustes
 		return T;
 	}
 
-	///**
-	// * Computes the least squared error between point sets A and B. The lists
-	// * must have equal length.
-	// * 
-	// * @param A
-	// *            list of points
-	// * @param B
-	// *            list of points
-	// * @return the least squared error between A and B
-	// */
-	//private static e = (A:Point2D[], B:Point2D[]):number => {
-	//	let k = A.length;
-	//	let e = 0;
-	//	for (let i = 0; i < k; i++)
-	//	{
-	//		e += Math.sqrt(Math.pow(A[i].x - B[i].x, 2) + Math.pow(A[i].y - B[i].y, 2));
-	//	}
-	//	return e;
-	//}
+	/**
+	 * Computes the least squared error between point sets A and B. The lists
+	 * must have equal length.
+	 * 
+	 * @param A
+	 *            list of points
+	 * @param B
+	 *            list of points
+	 * @return the least squared error between A and B
+	 */
+	private static e = (A:Point2D[], B:Point2D[]):number => {
+		let k = A.length;
+		let e = 0;
+		for (let i = 0; i < k; i++)
+		{
+			e += Math.sqrt(Math.pow(A[i].x - B[i].x, 2) + Math.pow(A[i].y - B[i].y, 2));
+		}
+		return e;
+	}
 }
 
 class Point2D {

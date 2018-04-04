@@ -9,6 +9,6 @@ const a = hdsp.PivotMDS.project(
     4, 2);
 console.log(a);
 console.log("-----------")
-const b = hdsp.Prokrustes.transform([[1,2],[2,2]],[[2,3],[3,4]]);
+const b = hdsp.Prokrustes.transform([[-1,0],[1,0],[1,1]],[[1,0],[-1,0],[-1,-1]]);
 console.log(b);
 console.log("-----------")

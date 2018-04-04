@@ -106,6 +106,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_prokrustes_.prokrustes.html#e" class="tsd-kind-icon">e</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_prokrustes_.prokrustes.html#r" class="tsd-kind-icon">r</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_prokrustes_.prokrustes.html#t" class="tsd-kind-icon">t</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_prokrustes_.prokrustes.html#toarray" class="tsd-kind-icon">to<wbr>Array</a></li>
@@ -119,6 +120,51 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+					<a name="e" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> e</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">e<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><a href="_prokrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span>, B<span class="tsd-signature-symbol">: </span><a href="_prokrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/5d1ce61/src/Prokrustes.ts#L131">Prokrustes.ts:131</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Computes the least squared error between point sets A and B. The lists
+									must have equal length.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>A: <a href="_prokrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<pre><code>       <span class="hljs-built_in">list</span> <span class="hljs-keyword">of</span> points
+</code></pre>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>B: <a href="_prokrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<pre><code>       <span class="hljs-built_in">list</span> <span class="hljs-keyword">of</span> points
+</code></pre>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>the least squared error between A and B</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
 					<a name="r" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> r</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
@@ -128,7 +174,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/729045c/src/Prokrustes.ts#L61">Prokrustes.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/5d1ce61/src/Prokrustes.ts#L74">Prokrustes.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -176,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/729045c/src/Prokrustes.ts#L94">Prokrustes.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/5d1ce61/src/Prokrustes.ts#L107">Prokrustes.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -221,7 +267,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/729045c/src/Prokrustes.ts#L30">Prokrustes.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/5d1ce61/src/Prokrustes.ts#L34">Prokrustes.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -238,19 +284,22 @@
 					<a name="topoint2d" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> to<wbr>Point2D</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>Point2D<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_prokrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Point2D<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span>, mirror<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_prokrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/729045c/src/Prokrustes.ts#L22">Prokrustes.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/5d1ce61/src/Prokrustes.ts#L22">Prokrustes.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>A: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>mirror: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_prokrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -267,7 +316,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/729045c/src/Prokrustes.ts#L43">Prokrustes.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/5d1ce61/src/Prokrustes.ts#L47">Prokrustes.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -304,6 +353,9 @@
 						<a href="../modules/_prokrustes_.html">"<wbr>Prokrustes"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="../modules/_test_.html">"<wbr>Test"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_utils_.html">"<wbr>Utils"</a>
 					</li>
 				</ul>
@@ -318,6 +370,9 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_prokrustes_.prokrustes.html" class="tsd-kind-icon">Prokrustes</a>
 						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="_prokrustes_.prokrustes.html#e" class="tsd-kind-icon">e</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
 								<a href="_prokrustes_.prokrustes.html#r" class="tsd-kind-icon">r</a>
 							</li>
