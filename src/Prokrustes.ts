@@ -49,7 +49,7 @@ export class Prokrustes
 		let A_m     = Prokrustes.toPoint2D(A, true); // mirrored
 		let B_p     = Prokrustes.toPoint2D(B, false);
 		let A_t     = Prokrustes.t(A_p, Prokrustes.r(A_p, B_p));
-		let A_m_t = Prokrustes.t(A_m, Prokrustes.r(A_m, B_p));
+		let A_m_t   = Prokrustes.t(A_m, Prokrustes.r(A_m, B_p));
 		if(Prokrustes.e(A_t, B_p) < Prokrustes.e(A_m_t, B_p)) {
 			return Prokrustes.toArray(A_t);
 		}
