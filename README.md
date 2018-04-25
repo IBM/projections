@@ -12,3 +12,5 @@ https://ibm.github.io/projections/
 2. `typedoc --out docs`
 3. `touch docs/.nojekyll`
 4. `npm version patch`
+5. `npm publish`
+6. `git push`
