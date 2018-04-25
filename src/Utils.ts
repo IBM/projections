@@ -10,11 +10,15 @@ export class Utils {
 		return result;
 	}
 
-	static array = (N:number):number[] => {
-		let result:number[] = [];
+	static array(N:number):number[] {
+		return Utils.fillArray<number>(N, 0);
+	}
+
+	static fillArray<T>(N:number, value:T):T[] {
+	    let result:T[] = [];
 		for(let n = 0; n < N; n++) {
-			result.push(0);
+			result.push(value);
 		}
 		return result;
-	}
+    }
 }
