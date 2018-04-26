@@ -5,7 +5,7 @@ export class Utils {
 	static array2D = (M:number, N:number):number[][] => {
 		let result:number[][] = [];
 		for(let m = 0; m < M; m++) {
-			result.push(new Array(N));
+			result.push(Utils.fillArray(N, 0));
 		}
 		return result;
 	}

@@ -73,7 +73,11 @@
 				<h3 id="build-release-instructions">Build / Release Instructions</h3>
 				<ol>
 					<li><code>tsc</code></li>
-					<li><code>typedoc</code></li>
+					<li><code>typedoc --out docs</code></li>
+					<li><code>touch docs/.nojekyll</code></li>
+					<li><code>npm version patch</code></li>
+					<li><code>npm publish</code></li>
+					<li><code>git push</code></li>
 				</ol>
 			</div>
 		</div>
