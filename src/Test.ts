@@ -17,6 +17,11 @@ import * as hdsp from "./HDSP";
 //console.log(b);
 //b = hdsp.Procrustes.align([[1,1],[1,4],[2,4]],[[1,-1],[4,-1],[4,-2]]); // mirror, rotate
 //console.log(b);
-hdsp.Procrustes.transform([[20,20],[20,50],[30,50]],[[1,-1],[4,-1],[4,-2]]); // mirror, rotate, scale, transform
-hdsp.Procrustes.transform([[20,20],[20,50],[30,50]],[[20,20],[20,50],[30,50]]); // self
+//hdsp.Procrustes.transform([[20,20],[20,50],[30,50]],[[1,-1],[4,-1],[4,-2]]); // mirror, rotate, scale, transform
+//hdsp.Procrustes.transform([[20,20],[20,50],[30,50]],[[20,20],[20,50],[30,50]]); // self
 //console.log("-----------")
+
+hdsp.Procrustes.transform(
+    [[0,0],[0,-2],[-1,-1]],
+    [[0,0],[0,2],[1,1]]
+);

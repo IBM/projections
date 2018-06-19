@@ -22,7 +22,7 @@ export class Procrustes
 		let points:Point2D[] = [];
 		A.forEach((a, index) => {
 			if(mirror) {
-				points.push(new Point2D(-a[0], a[1]));
+				points.push(new Point2D(a[0], -a[1]));
 			} else {
 				points.push(new Point2D(a[0], a[1]));
 			}
@@ -68,7 +68,7 @@ export class Procrustes
         });
     }
 
-    private static rotate = (A:Point2D[], B:Point2D[]):void => {
+    private static rotate = (A:Point2D[], B:Point2D[], angle?:number):void => {
 	    //let a = Procrustes.toArray(A);
 	    //let b = Procrustes.toArray(B);
 	    //let MM_ = Utils.product(Utils.transpose(b), a);
@@ -77,12 +77,18 @@ export class Procrustes
         //let V:Decomposition = PowerMethod.singularValueDecomposition(M_M, 2);
         //let X = Utils.product(Utils.transpose(U.vectors), Utils.transpose(V.vectors));
         //return Utils.product(a, X);
-        let n:number = 0, d:number = 0;
-        for(let i = 0; i < A.length; i++) {
-            n += A[i].x * B[i].y - A[i].y * B[i].x;
-            d += A[i].x * B[i].x + A[i].y * B[i].y;
+        let theta:number;
+        if(angle == null) {
+            let n: number = 0, d: number = 0;
+            for (let i = 0; i < A.length; i++) {
+                n += A[i].x * B[i].y - A[i].y * B[i].x;
+                d += A[i].x * B[i].x + A[i].y * B[i].y;
+            }
+            theta = Math.atan(n / d);
         }
-        let theta:number = Math.atan(n / d);
+        else {
+            theta = angle * (Math.PI / 180);
+        }
         let x = 0, y = 0;
         for(let i = 0; i < A.length; i++) {
             x = Math.cos(theta) * A[i].x - Math.sin(theta) * A[i].y;
@@ -99,18 +105,41 @@ export class Procrustes
 	    Procrustes.scale(A_p, Procrustes.center(A_p));
 	    Procrustes.scale(B_p, Procrustes.center(B_p));
 	    Procrustes.scale(A_p_m, Procrustes.center(A_p_m));
+	    let A_p_r = Procrustes.copy(A_p);
 	    Procrustes.rotate(A_p, B_p);
+	    Procrustes.rotate(A_p_r, B_p, 180);
+	    let A_p_m_r = Procrustes.copy(A_p_m);
 	    Procrustes.rotate(A_p_m, B_p);
+	    Procrustes.rotate(A_p_m_r, B_p, 180);
 	    let d:number = Procrustes.distance(A_p, B_p);
+	    let d_r:number = Procrustes.distance(A_p_r, B_p);
 	    let d_m:number = Procrustes.distance(A_p_m, B_p);
-	    if(d < d_m) {
-	        console.log(d);
+	    let d_m_r:number = Procrustes.distance(A_p_m_r, B_p);
+	    let min = Math.min(d, Math.min(d_r, Math.min(d_m, d_m_r)));
+        console.log(min);
+	    if(d == min) {
 			return Procrustes.toArray(A_p);
 		}
-		else {
-	        console.log(d_m);
-			return Procrustes.toArray(A_p_m);
+		else if(d_r == min) {
+			return Procrustes.toArray(A_p_r);
 		}
+		else if(d_m == min) {
+	        return Procrustes.toArray(A_p_m);
+        }
+        else if(d_m_r == min) {
+            return Procrustes.toArray(A_p_m_r);
+        }
+        else {
+	        return null;
+        }
+    }
+
+    private static copy = (A:Point2D[]):Point2D[] => {
+	    let copy:Point2D[] = [];
+	    for(let a of A) {
+	        copy.push(new Point2D(a.x, a.y));
+        }
+        return copy;
     }
 
 	/**
