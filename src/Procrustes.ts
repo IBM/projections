@@ -85,6 +85,7 @@ export class Procrustes
                 d += A[i].x * B[i].x + A[i].y * B[i].y;
             }
             theta = Math.atan(n / d);
+            console.log(`recorded theta is ${theta * (180 / Math.PI)}`);
         }
         else {
             theta = angle * (Math.PI / 180);
