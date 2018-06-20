@@ -19,7 +19,11 @@
     "space",
     "projections",
     "dimensionality",
-    "reduction"
+    "reduction",
+    "procrustes",
+    "analysis",
+    "multi",
+    "scaling"
   ],
   "author": "Daniel Weidele",
   "license": "Apache-2.0",
@@ -29,6 +33,7 @@
   "homepage": "https://github.com/IBM/projections#readme",
   "devDependencies": {},
   "dependencies": {
+    "npm": "^6.1.0",
     "typescript-compiler": "^1.4.1-2"
   }
 }
