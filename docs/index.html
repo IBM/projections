@@ -66,10 +66,33 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="high-dimensional-space-projections">High-Dimensional Space Projections</h1>
 				<p>TypeScript library for sparse and dense high-dimensional space projections.</p>
-				<h2 id="developers">Developers</h2>
-				<p><a href="https://github.com/IBM/projections">https://github.com/IBM/projections</a></p>
-				<h2 id="typedocs">TypeDocs</h2>
+				<h2 id="usage">Usage</h2>
+				<h3 id="typedocs">TypeDocs</h3>
 				<p><a href="https://ibm.github.io/projections/">https://ibm.github.io/projections/</a></p>
+				<h3 id="examples">Examples</h3>
+				<h4 id="multi-dimensional-scaling-pivotmds-">Multi-Dimensional Scaling (PivotMDS)</h4>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> hdsp <span class="hljs-keyword">from</span> <span class="hljs-string">"hdsp"</span>;
+hdsp.PivotMDS.project(
+    [
+        [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],  <span class="hljs-comment">// feature vector 1</span>
+        [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],  <span class="hljs-comment">// feature vector 2</span>
+                            <span class="hljs-comment">// ...</span>
+        [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]   <span class="hljs-comment">// feature vector n</span>
+    ],
+    <span class="hljs-number">4</span>, <span class="hljs-comment">// number of pivots</span>
+    <span class="hljs-number">2</span>  <span class="hljs-comment">// output dimensionality</span>
+);
+</code></pre>
+				<h4 id="procrustes-analysis-2d-">Procrustes Analysis (2D)</h4>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> hdsp <span class="hljs-keyword">from</span> <span class="hljs-string">"hdsp"</span>;
+hdsp.Procrustes.transform(
+    [[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">-2</span>],[<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>]],  <span class="hljs-comment">// input</span>
+    [[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]]      <span class="hljs-comment">// reference</span>
+);
+</code></pre>
+				<h2 id="developers">Developers</h2>
+				<h3 id="code-repository">Code repository</h3>
+				<p><a href="https://github.com/IBM/projections">https://github.com/IBM/projections</a></p>
 				<h3 id="build-release-instructions">Build / Release Instructions</h3>
 				<ol>
 					<li><code>tsc</code></li>
