@@ -1,23 +1,12 @@
 /**
- * This computes registration parameters for an optimal affine transformation
- * between 2 matched point sets towards the least squared error.
- * <p>
- * The implementation is based on <br />
- * <i>Ross, Amy. "Procrustes analysis." Course report, Department of Computer Science and Engineering,
- * University of South Carolina (2004).</i>
- * </p>
+ * Performs a Procrustes analysis and transforms an input set of points A to optimally match a reference
+ * set of points B under pairwise Euclidean distances.
  * 
  * @author Daniel Weidele (dkweidel@us.ibm.com)
  * @version 06/18/2018
  */
 export class Procrustes
 {
-	// public static demo = () => {
-	// 	let A:Point2D[] = [new Point2D(1,1), new Point2D(5,7)];
-	// 	let B:Point2D[] = [new Point2D(8,11), new Point2D(8,9)];
-	// 	console.log(Procrustes.e(Procrustes.t(A, Procrustes.r(A, B)), B) < 0.000001 ? "SUCCESS" : "FAIL");
-	// }
-
 	private static toPoint2D = (A:number[][], mirror:boolean):Point2D[] => {
 		let points:Point2D[] = [];
 		A.forEach((a, index) => {
@@ -38,6 +27,12 @@ export class Procrustes
 		return points;
 	}
 
+    /**
+     * Compute the mean point among a set of points A.
+     *
+     * @param {Point2D[]} A the point set
+     * @returns {Point2D} mean point
+     */
 	private static mean = (A:Point2D[]):Point2D => {
 	    let mean:Point2D = new Point2D(0,0);
 	    A.forEach((a, index) => {
@@ -49,6 +44,13 @@ export class Procrustes
 	    return mean;
     }
 
+    /**
+     * Center a point set A such that the centroid of A results at (0, 0).
+     * This method returns the average distance from a point to the centroid.
+     *
+     * @param {Point2D[]} A the point set to be centered
+     * @returns {number} average distance to centroid
+     */
     private static center = (A:Point2D[]):number => {
 	    let mean:Point2D = Procrustes.mean(A);
 	    let scale:number = 0;
@@ -61,6 +63,12 @@ export class Procrustes
 	    return Math.sqrt(scale / A.length);
     }
 
+    /**
+     * Scale coordinates of point set A.
+     *
+     * @param {Point2D[]} A point set to scale
+     * @param {number} scale scaling factor
+     */
     private static scale = (A:Point2D[], scale:number):void => {
         A.forEach((a, index) => {
             a.x /= scale;
@@ -68,15 +76,15 @@ export class Procrustes
         });
     }
 
+    /**
+     * Rotates input shape A according to reference shape B. Optionally force rotation angle (in radians).
+     *
+     * @param {Point2D[]} A input shape A
+     * @param {Point2D[]} B reference shape B
+     * @param {number} theta Omit to determine optimal rotation, or set to force angle.
+     * @returns {number} rotated A
+     */
     private static rotate = (A:Point2D[], B:Point2D[], theta?:number):number => {
-	    //let a = Procrustes.toArray(A);
-	    //let b = Procrustes.toArray(B);
-	    //let MM_ = Utils.product(Utils.transpose(b), a);
-	    //let M_M = Utils.transpose(MM_);
-        //let U:Decomposition = PowerMethod.singularValueDecomposition(MM_, 2);
-        //let V:Decomposition = PowerMethod.singularValueDecomposition(M_M, 2);
-        //let X = Utils.product(Utils.transpose(U.vectors), Utils.transpose(V.vectors));
-        //return Utils.product(a, X);
         if(theta == null) {
             let n: number = 0, d: number = 0;
             for (let i = 0; i < A.length; i++) {
@@ -84,30 +92,28 @@ export class Procrustes
                 d += A[i].x * B[i].x + A[i].y * B[i].y;
             }
             theta = Math.atan(n / d);
-            //if(theta < 0) {
-            //    theta = Math.PI + theta;
-            // }
-            //if(theta < 0) {
-            //    theta = Math.PI + theta;
-            //}
             console.log(`recorded theta is ${theta * (180 / Math.PI)}`);
         }
         let x = 0, y = 0;
         for(let i = 0; i < A.length; i++) {
-            //if(theta > 0) {
-               x = Math.cos(theta) * A[i].x - Math.sin(theta) * A[i].y;
-                y = Math.sin(theta) * A[i].x + Math.cos(theta) * A[i].y;
-            //}
-            //else if (theta < 0) {
-                //x = Math.cos(theta) * A[i].x + Math.sin(theta) * A[i].y;
-                //y = -Math.sin(theta) * A[i].x + Math.cos(theta) * A[i].y;
-            //}
+            x = Math.cos(theta) * A[i].x - Math.sin(theta) * A[i].y;
+            y = Math.sin(theta) * A[i].x + Math.cos(theta) * A[i].y;
             A[i].x = x;
             A[i].y = y;
         }
         return theta;
     }
 
+    /**
+     * Performs a Procrustes analysis and transforms an input set of points A to optimally match a reference
+     * set of points B under pairwise Euclidean distances.
+     *
+     * Careful: This method modifies B.
+     *
+     * @param {number[][]} A the input shape A
+     * @param {number[][]} B the reference shape B (will be centered and scaled during this operation)
+     * @returns {number[][]} A centered, scaled, and optimally rotated towards B
+     */
     public static transform = (A:number[][], B:number[][]):number[][] => {
 	    let A_p = Procrustes.toPoint2D(A, false);
 	    let A_p_m = Procrustes.toPoint2D(A, true);
@@ -144,6 +150,12 @@ export class Procrustes
         }
     }
 
+    /**
+     * Copies the input array.
+     *
+     * @param {Point2D[]} A input array
+     * @returns {Point2D[]} copy of A
+     */
     private static copy = (A:Point2D[]):Point2D[] => {
 	    let copy:Point2D[] = [];
 	    for(let a of A) {
@@ -171,16 +183,6 @@ export class Procrustes
 		}
 		return e;
 	}
-
-    // private static print = (A:number[][], desc:string):void => {
-	 //    console.log("******************************)");
-	 //    console.log(desc);
-	 //    console.log("******************************)");
-	 //    for(let i = 0; i < A.length; i++) {
-	 //        console.log(A[i]);
-    //     }
-    //     console.log("******************************)");
-    // }
 }
 
 class Point2D {

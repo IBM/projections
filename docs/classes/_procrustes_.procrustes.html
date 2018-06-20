@@ -72,13 +72,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>This computes registration parameters for an optimal affine transformation
-						between 2 matched point sets towards the least squared error.</p>
-						<p>
-							The implementation is based on <br />
-							<i>Ross, Amy. &quot;Procrustes analysis.&quot; Course report, Department of Computer Science and Engineering,
-							University of South Carolina (2004).</i>
-						</p>
+						<p>Performs a Procrustes analysis and transforms an input set of points A to optimally match a reference
+						set of points B under pairwise Euclidean distances.</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>author</dt>
@@ -131,16 +126,28 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L52">Procrustes.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L54">Procrustes.ts:54</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Center a point set A such that the centroid of A results at (0, 0).
+									This method returns the average distance from a point to the centroid.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>A: <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>the point set to be centered</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>average distance to centroid</p>
 						</li>
 					</ul>
 				</section>
@@ -154,16 +161,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L147">Procrustes.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L159">Procrustes.ts:159</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Copies the input array.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>A: <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>input array</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>copy of A</p>
 						</li>
 					</ul>
 				</section>
@@ -177,7 +195,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L165">Procrustes.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L177">Procrustes.ts:177</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -222,16 +240,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L41">Procrustes.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L36">Procrustes.ts:36</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Compute the mean point among a set of points A.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>A: <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>the point set</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a></h4>
+							<p>mean point</p>
 						</li>
 					</ul>
 				</section>
@@ -245,22 +274,43 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L71">Procrustes.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L87">Procrustes.ts:87</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rotates input shape A according to reference shape B. Optionally force rotation angle (in radians).</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>A: <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>input shape A</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>B: <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>reference shape B</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> theta: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Omit to determine optimal rotation, or set to force angle.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>rotated A</p>
 						</li>
 					</ul>
 				</section>
@@ -274,13 +324,24 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L64">Procrustes.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L72">Procrustes.ts:72</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Scale coordinates of point set A.</p>
+								</div>
+								<p>scaling factor</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>A: <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>point set to scale</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>scale: <span class="tsd-signature-type">number</span></h5>
@@ -300,7 +361,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L33">Procrustes.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L22">Procrustes.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -323,7 +384,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L21">Procrustes.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L10">Procrustes.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -349,19 +410,37 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/42949f9/src/Procrustes.ts#L111">Procrustes.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/df60058/src/Procrustes.ts#L117">Procrustes.ts:117</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Performs a Procrustes analysis and transforms an input set of points A to optimally match a reference
+									set of points B under pairwise Euclidean distances.</p>
+								</div>
+								<p>Careful: This method modifies B.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>A: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>the input shape A</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>B: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>the reference shape B (will be centered and scaled during this operation)</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>A centered, scaled, and optimally rotated towards B</p>
 						</li>
 					</ul>
 				</section>
