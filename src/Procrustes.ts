@@ -68,7 +68,7 @@ export class Procrustes
         });
     }
 
-    private static rotate = (A:Point2D[], B:Point2D[], angle?:number):void => {
+    private static rotate = (A:Point2D[], B:Point2D[], theta?:number):number => {
 	    //let a = Procrustes.toArray(A);
 	    //let b = Procrustes.toArray(B);
 	    //let MM_ = Utils.product(Utils.transpose(b), a);
@@ -77,29 +77,35 @@ export class Procrustes
         //let V:Decomposition = PowerMethod.singularValueDecomposition(M_M, 2);
         //let X = Utils.product(Utils.transpose(U.vectors), Utils.transpose(V.vectors));
         //return Utils.product(a, X);
-        let theta:number;
-        if(angle == null) {
+        if(theta == null) {
             let n: number = 0, d: number = 0;
             for (let i = 0; i < A.length; i++) {
                 n += A[i].x * B[i].y - A[i].y * B[i].x;
                 d += A[i].x * B[i].x + A[i].y * B[i].y;
             }
             theta = Math.atan(n / d);
-            if(theta < 0) {
-                theta = Math.PI + theta;
-            }
+            //if(theta < 0) {
+            //    theta = Math.PI + theta;
+            // }
+            //if(theta < 0) {
+            //    theta = Math.PI + theta;
+            //}
             console.log(`recorded theta is ${theta * (180 / Math.PI)}`);
-        }
-        else {
-            theta = angle * (Math.PI / 180);
         }
         let x = 0, y = 0;
         for(let i = 0; i < A.length; i++) {
-            x = Math.cos(theta) * A[i].x - Math.sin(theta) * A[i].y;
-            y = Math.sin(theta) * A[i].x + Math.cos(theta) * A[i].y;
+            //if(theta > 0) {
+               x = Math.cos(theta) * A[i].x - Math.sin(theta) * A[i].y;
+                y = Math.sin(theta) * A[i].x + Math.cos(theta) * A[i].y;
+            //}
+            //else if (theta < 0) {
+                //x = Math.cos(theta) * A[i].x + Math.sin(theta) * A[i].y;
+                //y = -Math.sin(theta) * A[i].x + Math.cos(theta) * A[i].y;
+            //}
             A[i].x = x;
             A[i].y = y;
         }
+        return theta;
     }
 
     public static transform = (A:number[][], B:number[][]):number[][] => {
@@ -110,11 +116,11 @@ export class Procrustes
 	    Procrustes.scale(B_p, Procrustes.center(B_p));
 	    Procrustes.scale(A_p_m, Procrustes.center(A_p_m));
 	    let A_p_r = Procrustes.copy(A_p);
-	    Procrustes.rotate(A_p, B_p);
-	    Procrustes.rotate(A_p_r, B_p, 180);
+	    let theta = Procrustes.rotate(A_p, B_p);
+	    Procrustes.rotate(A_p_r, B_p, theta - Math.PI);
 	    let A_p_m_r = Procrustes.copy(A_p_m);
-	    Procrustes.rotate(A_p_m, B_p);
-	    Procrustes.rotate(A_p_m_r, B_p, 180);
+	    theta = Procrustes.rotate(A_p_m, B_p);
+	    Procrustes.rotate(A_p_m_r, B_p, Math.PI + theta);
 	    let d:number = Procrustes.distance(A_p, B_p);
 	    let d_r:number = Procrustes.distance(A_p_r, B_p);
 	    let d_m:number = Procrustes.distance(A_p_m, B_p);
