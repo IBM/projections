@@ -1,5 +1,5 @@
 /**
- * @author Daniel K. Weidele, IBM Research
+ * @author Daniel Karl, IBM Research
  */
 import {PowerMethod, Decomposition} from "./PowerMethod";
 import {Utils} from "./Utils";

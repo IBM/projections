@@ -25,7 +25,10 @@
     "multi",
     "scaling"
   ],
-  "author": "Daniel Weidele",
+  "author": {
+    "name": "Daniel Karl",
+    "email": "daniel.karl@ibm.com"
+  },
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/IBM/projections/issues"

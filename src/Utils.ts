@@ -1,5 +1,5 @@
 /**
- * @author Daniel K. Weidele, IBM Research
+ * @author Daniel Karl, IBM Research
  */
 export class Utils {
 	static array2D = (M:number, N:number):number[][] => {
@@ -8,11 +8,11 @@ export class Utils {
 			result.push(Utils.fillArray(N, 0));
 		}
 		return result;
-	}
+	};
 
 	static array(N:number):number[] {
 		return Utils.fillArray<number>(N, 0);
-	}
+	};
 
 	static fillArray<T>(N:number, value:T):T[] {
 	    let result:T[] = [];
@@ -20,5 +20,5 @@ export class Utils {
 			result.push(value);
 		}
 		return result;
-    }
+    };
 }

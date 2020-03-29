@@ -2,7 +2,7 @@
  * Performs a Procrustes analysis and transforms an input set of points A to optimally match a reference
  * set of points B under pairwise Euclidean distances.
  * 
- * @author Daniel Weidele (dkweidel@us.ibm.com)
+ * @author Daniel Karl, IBM Research
  * @version 06/18/2018
  */
 export class Procrustes
@@ -17,7 +17,7 @@ export class Procrustes
 			}
 		});
 		return points;
-	}
+	};
 
 	private static toArray = (A:Point2D[]):number[][] => {
 		let points:number[][] = [];
@@ -25,7 +25,7 @@ export class Procrustes
 			points.push([a.x, a.y]);
 		});
 		return points;
-	}
+	};
 
     /**
      * Compute the mean point among a set of points A.
@@ -42,7 +42,7 @@ export class Procrustes
 	    mean.x /= A.length;
 	    mean.y /= A.length;
 	    return mean;
-    }
+    };
 
     /**
      * Center a point set A such that the centroid of A results at (0, 0).
@@ -61,7 +61,7 @@ export class Procrustes
 	        scale += a.y * a.y;
         });
 	    return Math.sqrt(scale / A.length);
-    }
+    };
 
     /**
      * Scale coordinates of point set A.
@@ -74,7 +74,7 @@ export class Procrustes
             a.x /= scale;
             a.y /= scale;
         });
-    }
+    };
 
     /**
      * Rotates input shape A according to reference shape B. Optionally force rotation angle (in radians).
@@ -92,7 +92,6 @@ export class Procrustes
                 d += A[i].x * B[i].x + A[i].y * B[i].y;
             }
             theta = Math.atan(n / d);
-            console.log(`recorded theta is ${theta * (180 / Math.PI)}`);
         }
         let x = 0, y = 0;
         for(let i = 0; i < A.length; i++) {
@@ -102,7 +101,7 @@ export class Procrustes
             A[i].y = y;
         }
         return theta;
-    }
+    };
 
     /**
      * Performs a Procrustes analysis and transforms an input set of points A to optimally match a reference
@@ -132,7 +131,6 @@ export class Procrustes
 	    let d_m:number = Procrustes.distance(A_p_m, B_p);
 	    let d_m_r:number = Procrustes.distance(A_p_m_r, B_p);
 	    let min = Math.min(d, Math.min(d_r, Math.min(d_m, d_m_r)));
-        console.log(min);
 	    if(d == min) {
 			return Procrustes.toArray(A_p);
 		}
@@ -148,7 +146,7 @@ export class Procrustes
         else {
 	        return null;
         }
-    }
+    };
 
     /**
      * Copies the input array.
@@ -162,7 +160,7 @@ export class Procrustes
 	        copy.push(new Point2D(a.x, a.y));
         }
         return copy;
-    }
+    };
 
 	/**
 	 * Computes the procrustes distance between point sets A and B. The lists
@@ -182,7 +180,7 @@ export class Procrustes
 			e += Math.sqrt(Math.pow(A[i].x - B[i].x, 2) + Math.pow(A[i].y - B[i].y, 2));
 		}
 		return e;
-	}
+	};
 }
 
 class Point2D {

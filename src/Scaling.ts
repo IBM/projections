@@ -1,5 +1,5 @@
 /**
- * @author Daniel K. Weidele, IBM Research
+ * @author Daniel Karl, IBM Research
  */
 import {Utils} from "./Utils";
 export class Scaling {
