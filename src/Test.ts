@@ -21,6 +21,16 @@ import * as hdsp from "./HDSP";
 //hdsp.Procrustes.transform([[20,20],[20,50],[30,50]],[[20,20],[20,50],[30,50]]); // self
 //console.log("-----------")
 
+// const a = hdsp.MDSSGD.project([
+// 		[1,0,0,1,0,0,0,1],
+// 		[0,1,1,0,1,1,1,1],
+// 		[0,0,0,1,0,1,0,1]
+// 	], 2);
+
+// hdsp.Scaling.normalize(a);
+
+// console.log(a);
+
 hdsp.Procrustes.transform(
     [[0,0],[0,-2],[-1,-1]],
     [[0,0],[0,2],[1,1]]

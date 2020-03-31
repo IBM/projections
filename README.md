@@ -23,6 +23,20 @@ hdsp.PivotMDS.project(
 );
 ```
 
+#### Multi-dimensional Scaling by Stochastic Gradient Descent (MDSSGD)
+```typescript
+import * as hdsp from "hdsp";
+hdsp.MDSSGD.project(
+    [
+        [1,0,0,1,0,0,0,1],  // feature vector 1
+        [0,1,1,0,1,1,1,1],  // feature vector 2
+                            // ...
+        [0,0,0,1,0,1,0,1]   // feature vector n
+    ],
+    2  // output dimensionality
+);
+```
+
 #### Procrustes Analysis (2D)
 ```typescript
 import * as hdsp from "hdsp";

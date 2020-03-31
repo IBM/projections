@@ -1,5 +1,9 @@
 /**
  * @author Daniel Karl, IBM Research
+ *
+ * Literature:
+ * Brandes, Ulrik, and Christian Pich. "Eigensolver methods for progressive multidimensional scaling of large data."
+ * International Symposium on Graph Drawing. Springer, Berlin, Heidelberg, 2006.
  */
 import {PowerMethod, Decomposition} from "./PowerMethod";
 import {Utils} from "./Utils";
@@ -22,7 +26,7 @@ export class PivotMDS {
 			return [];
 		}
 		K = Math.min(N, K);
-		let distances:number[][] = PivotMDS.distance(featureVectors);
+		let distances:number[][] = Utils.distance(featureVectors);
 		let result:number[][] = Utils.array2D(N, D);
 		let C:number[][] = Utils.array2D(K, N);
 		for (let k = 0; k < K; k++) {
@@ -73,24 +77,5 @@ export class PivotMDS {
 	    	}
 	    }
 		return result;
-	}
-
-	private static distance = (featureVectors: number[][]): number[][] => {
-		let N = featureVectors.length;
-		let result:number[][] = Utils.array2D(N, N);
-		for(let n = 0; n < N; n++) {
-			for(let m = 0; m <= n; m++) {
-				result[n][m] = result[m][n] = PivotMDS.euclidean(featureVectors[n], featureVectors[m]);
-			}
-		}
-		return result;	
-	}
-
-	private static euclidean = (u:number[], v:number[]): number => {
-		let sum:number = 0;
-		for(let i = 0; i < u.length; i++) {
-			sum += Math.pow(u[i] - v[i], 2);
-		}
-		return Math.sqrt(sum);
-	}
+	};
 }

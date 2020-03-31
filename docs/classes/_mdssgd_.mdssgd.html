@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Scaling | hdsp</title>
+	<title>MDSSGD | hdsp</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_scaling_.html">&quot;Scaling&quot;</a>
+					<a href="../modules/_mdssgd_.html">&quot;MDSSGD&quot;</a>
 				</li>
 				<li>
-					<a href="_scaling_.scaling.html">Scaling</a>
+					<a href="_mdssgd_.mdssgd.html">MDSSGD</a>
 				</li>
 			</ul>
-			<h1>Class Scaling</h1>
+			<h1>Class MDSSGD</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Scaling</span>
+						<span class="target">MDSSGD</span>
 					</li>
 				</ul>
 			</section>
@@ -84,7 +84,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_scaling_.scaling.html#normalize" class="tsd-kind-icon">normalize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_mdssgd_.mdssgd.html#project" class="tsd-kind-icon">project</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,34 +93,43 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="normalize" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> normalize</h3>
+					<a name="project" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> project</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">normalize<span class="tsd-signature-symbol">(</span>coordinates<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">project<span class="tsd-signature-symbol">(</span>featureVectors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span>, D<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/9e54dd3/src/Scaling.ts#L10">Scaling.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/9e54dd3/src/MDSSGD.ts#L18">MDSSGD.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Normalize the coordinates between 0 and 1 preserving the aspect ratios of dimensions.</p>
+									<p>Project a feature space into <code>D</code> dimensions.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>coordinates: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>featureVectors: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
+											<p>the feature vectors</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>D: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>the output dimensionality</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -135,7 +144,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_hdsp_.html">&quot;HDSP&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_mdssgd_.html">&quot;MDSSGD&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -147,7 +156,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_procrustes_.html">&quot;<wbr>Procrustes&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_scaling_.html">&quot;<wbr>Scaling&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -160,10 +169,10 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_scaling_.scaling.html" class="tsd-kind-icon">Scaling</a>
+						<a href="_mdssgd_.mdssgd.html" class="tsd-kind-icon">MDSSGD</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_scaling_.scaling.html#normalize" class="tsd-kind-icon">normalize</a>
+								<a href="_mdssgd_.mdssgd.html#project" class="tsd-kind-icon">project</a>
 							</li>
 						</ul>
 					</li>
