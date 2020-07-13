@@ -34,9 +34,7 @@
     "url": "https://github.com/IBM/projections/issues"
   },
   "homepage": "https://github.com/IBM/projections#readme",
-  "devDependencies": {},
-  "dependencies": {
-    "npm": "^6.1.0",
+  "devDependencies": {
     "typescript-compiler": "^1.4.1-2"
   }
 }
