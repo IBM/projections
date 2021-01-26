@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Point2D | hdsp2</title>
+	<title>SparseTerm | hdsp2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_procrustes_.html">&quot;Procrustes&quot;</a>
+					<a href="../modules/_sparseterm_.html">&quot;SparseTerm&quot;</a>
 				</li>
 				<li>
-					<a href="_procrustes_.point2d.html">Point2D</a>
+					<a href="_sparseterm_.sparseterm.html">SparseTerm</a>
 				</li>
 			</ul>
-			<h1>Class Point2D</h1>
+			<h1>Class SparseTerm</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Point2D</span>
+						<span class="target">SparseTerm</span>
 					</li>
 				</ul>
 			</section>
@@ -81,70 +81,106 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported"><a href="_procrustes_.point2d.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_sparseterm_.sparseterm.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="_procrustes_.point2d.html#x" class="tsd-kind-icon">x</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="_procrustes_.point2d.html#y" class="tsd-kind-icon">y</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_sparseterm_.sparseterm.html#d" class="tsd-kind-icon">d</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_sparseterm_.sparseterm.html#i" class="tsd-kind-icon">i</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_sparseterm_.sparseterm.html#j" class="tsd-kind-icon">j</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_sparseterm_.sparseterm.html#w_ij" class="tsd-kind-icon">w_<wbr>ij</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_sparseterm_.sparseterm.html#w_ji" class="tsd-kind-icon">w_<wbr>ji</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Point2D<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Sparse<wbr>Term<span class="tsd-signature-symbol">(</span>i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, j<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, d<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_sparseterm_.sparseterm.html" class="tsd-signature-type">SparseTerm</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/Procrustes.ts#L186">Procrustes.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/SparseTerm.ts#L5">SparseTerm.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>x: <span class="tsd-signature-type">number</span></h5>
+									<h5>i: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>y: <span class="tsd-signature-type">number</span></h5>
+									<h5>j: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>d: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_procrustes_.point2d.html" class="tsd-signature-type">Point2D</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_sparseterm_.sparseterm.html" class="tsd-signature-type">SparseTerm</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-					<a name="x" class="tsd-anchor"></a>
-					<h3>x</h3>
-					<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="d" class="tsd-anchor"></a>
+					<h3>d</h3>
+					<div class="tsd-signature tsd-kind-icon">d<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/Procrustes.ts#L187">Procrustes.ts:187</a></li>
+							<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/SparseTerm.ts#L7">SparseTerm.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-					<a name="y" class="tsd-anchor"></a>
-					<h3>y</h3>
-					<div class="tsd-signature tsd-kind-icon">y<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="i" class="tsd-anchor"></a>
+					<h3>i</h3>
+					<div class="tsd-signature tsd-kind-icon">i<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/Procrustes.ts#L187">Procrustes.ts:187</a></li>
+							<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/SparseTerm.ts#L7">SparseTerm.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="j" class="tsd-anchor"></a>
+					<h3>j</h3>
+					<div class="tsd-signature tsd-kind-icon">j<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/SparseTerm.ts#L7">SparseTerm.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="w_ij" class="tsd-anchor"></a>
+					<h3>w_<wbr>ij</h3>
+					<div class="tsd-signature tsd-kind-icon">w_<wbr>ij<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/SparseTerm.ts#L4">SparseTerm.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="w_ji" class="tsd-anchor"></a>
+					<h3>w_<wbr>ji</h3>
+					<div class="tsd-signature tsd-kind-icon">w_<wbr>ji<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/IBM/projections/blob/d42b108/src/SparseTerm.ts#L5">SparseTerm.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -171,7 +207,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_powermethod_.html">&quot;<wbr>Power<wbr>Method&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_procrustes_.html">&quot;<wbr>Procrustes&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -180,7 +216,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_sparsemdssgd_.html">&quot;<wbr>SparseMDSSGD&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_sparseterm_.html">&quot;<wbr>Sparse<wbr>Term&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -195,25 +231,31 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_procrustes_.point2d.html" class="tsd-kind-icon">Point2D</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="_sparseterm_.sparseterm.html" class="tsd-kind-icon">Sparse<wbr>Term</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
-								<a href="_procrustes_.point2d.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_sparseterm_.sparseterm.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-								<a href="_procrustes_.point2d.html#x" class="tsd-kind-icon">x</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_sparseterm_.sparseterm.html#d" class="tsd-kind-icon">d</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-								<a href="_procrustes_.point2d.html#y" class="tsd-kind-icon">y</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_sparseterm_.sparseterm.html#i" class="tsd-kind-icon">i</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_sparseterm_.sparseterm.html#j" class="tsd-kind-icon">j</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_sparseterm_.sparseterm.html#w_ij" class="tsd-kind-icon">w_<wbr>ij</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_sparseterm_.sparseterm.html#w_ji" class="tsd-kind-icon">w_<wbr>ji</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_procrustes_.procrustes.html" class="tsd-kind-icon">Procrustes</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
