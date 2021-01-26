@@ -37,6 +37,22 @@ hdsp.MDSSGD.project(
 );
 ```
 
+#### Sparse Multi-dimensional Scaling by Stochastic Gradient Descent (Sparse-MDSSGD)
+```typescript
+import * as hdsp from "hdsp";
+hdsp.SparseMDSSGD.project(
+    5, 4,                   // n, m 
+    [0, 1, 2, 3],           // edges: from
+    [1, 2, 3, 4],           // edges: to
+    [1, 1, 1, 1],           // edges: values
+    2,                      // output dimensionality
+    4,                      // number of pivots
+    1,                      // seed
+    100,                    // max iterations
+    0.001                   // minimum layout change to continue
+);
+```
+
 #### Procrustes Analysis (2D)
 ```typescript
 import * as hdsp from "hdsp";
