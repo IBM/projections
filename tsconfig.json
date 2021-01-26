@@ -18,8 +18,8 @@
     "noFallthroughCasesInSwitch": true,
     "allowUnreachableCode": false,
     "experimentalDecorators": true  },
-  "include": [
-    "src/**/*"
-  ]
+    "include": [
+      "src/**/*"
+    ]
 }
 
